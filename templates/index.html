@@ -1,0 +1,14 @@
+{% extends "universal.html" %}
+
+{% block css %}
+<!-- App stylesheet links goes here -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- App HTML goes here -->
+    <h1>My Apps</h1>
+    {%for i in range(0, numApps)%}
+        <a href="{{ url_for(myApps[i].name.lower())}}"><div class="app-button"><img src="{{ url_for('static', filename='images/'+myApps[i].icon) }}"><h2>{{myApps[i].name}}</h2></div></a>
+    {%endfor%}
+{% endblock %}

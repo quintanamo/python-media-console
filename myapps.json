@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Music",
+        "icon": "music.png"
+    },
+    {
+        "name": "Videos",
+        "icon": "video.png"
+    }
+]
