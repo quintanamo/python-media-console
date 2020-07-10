@@ -2,9 +2,17 @@
 
 {% block css %}
 <!-- App stylesheet links goes here -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/music.css') }}">
 {% endblock %}
 
 {% block content %}
     <!-- App HTML goes here -->
-    <h1>Music</h1>
+    <div class="music-container">
+        {%for i in range(0, numMusicFiles)%}
+        <button class="music-button" songref="{{ musicFiles[i] }}" onclick="playMusicFile(this)">▶&emsp;{{ musicFiles[i] }}</button>
+        {%endfor%}
+    </div>
+
+    <div class="audio-container"><span id="song-info"></span><audio id="audio" controls="controls" src=""></audio> </div>
+    <script src="{{url_for('static', filename='scripts/music.js')}}"></script>
 {% endblock %}
